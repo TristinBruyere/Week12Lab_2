@@ -1,0 +1,15 @@
+﻿create database movies;
+
+use movies;
+
+create table movie (
+id int not null auto_increment,
+name varchar(30),
+genre varchar(30),
+mainactor varchar(30),
+primary key (id)
+);
+
+insert into movie (id, name, genre, mainactor) values(1, 'Oceans 11', 'Action', 'Matt Damon');
+insert into movie (id, name, genre, mainactor) values(2, 'Face Off', 'Crime', 'Nicolas Cage');
+insert into movie (id, name, genre, mainactor) values(3, 'Step Brothers', 'Comedy', 'Will Ferrell');
