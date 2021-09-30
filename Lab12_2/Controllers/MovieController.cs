@@ -20,8 +20,25 @@ namespace Lab12_2.Controllers
 
         [HttpGet("allmovies")]
         public List<Movie> getAllMovies()
-        {
+        { 
             return DAL.GetAllMovies();
+        }
+
+        [HttpGet("getmovie")]
+        public Movie getMovie(int id)
+        {
+            return DAL.GetMovie(id);
+        }
+
+        [HttpGet("getmoviegenre")]
+        public List<Movie> getMovieGenre(string gen)
+        {
+            List<Movie> movies = DAL.GetMovieGenre(gen);
+            return movies;
+        }
+        [HttpGet("genrelist")]
+        public List<Movie> GetMovieGenres()
+        { 
         }
     }
 }
