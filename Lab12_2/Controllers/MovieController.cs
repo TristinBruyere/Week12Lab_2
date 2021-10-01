@@ -37,8 +37,9 @@ namespace Lab12_2.Controllers
             return movies;
         }
         [HttpGet("genrelist")]
-        public List<Movie> GetMovieGenres()
-        { 
+        public List<string> GetMovieGenres()
+        {
+            return DAL.GetGenre();
         }
     }
 }

@@ -26,10 +26,15 @@ namespace Lab12_2.Models
             string sql = "select * from movie where genre = @gen";
             return DB.Query<Movie>(sql, myparams).ToList();
         }
-        public static List<> GetGenre()
+        public static List<string> GetGenre()
         {
-
-
+            List<Movie> movies = DAL.GetAllMovies();
+            List<string> genres = new List<string>();
+            foreach (Movie movie in movies)
+            {
+                genres.Add(movie.genre);
+            }
+            return genres;
         }
     }
 }
