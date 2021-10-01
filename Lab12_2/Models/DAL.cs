@@ -32,7 +32,10 @@ namespace Lab12_2.Models
             List<string> genres = new List<string>();
             foreach (Movie movie in movies)
             {
-                genres.Add(movie.genre);
+                if (!genres.Contains(movie.genre))
+                {
+                    genres.Add(movie.genre);
+                }
             }
             return genres;
         }
