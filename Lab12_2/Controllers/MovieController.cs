@@ -41,5 +41,10 @@ namespace Lab12_2.Controllers
         {
             return DAL.GetGenre();
         }
+        [HttpGet("search")]
+        public List<Movie> searchMovieName(string name)
+        {
+            return DAL.SearchByMovieName(name);
+        }
     }
 }

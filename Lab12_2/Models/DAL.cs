@@ -36,5 +36,11 @@ namespace Lab12_2.Models
             }
             return genres;
         }
+        public static List<Movie> SearchByMovieName(string name)
+        {
+            var mypararms = new { search = $"%{name}%" };
+            List<Movie> movies = DB.Query<Movie>("select * from movie where name like @search", mypararms).ToList();
+            return movies;
+        }
     }
 }
